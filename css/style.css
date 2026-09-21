@@ -1,0 +1,97 @@
+body {
+  background-color: #2B2D38;
+  font-family: "Poppins", sans-serif;
+  color: white;
+}
+
+.page {
+  max-width: 1300px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 0;
+  align-items: center;
+}
+
+.logo {
+  font-family: "Merriweather", serif;
+}
+.logo span {
+  color: #DB2A6B;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  gap: 50px;
+}
+nav ul li a {
+  color: #ABABAB;
+  text-decoration: none;
+}
+
+.hero {
+  max-width: 50%;
+}
+.hero .hero_content {
+  padding: 15px;
+}
+.hero .hero_content h1 {
+  font-family: "Merriweather", serif;
+  font-size: 4em;
+}
+.hero .hero_content p {
+  color: #ABABAB;
+}
+.hero .hero_content .buttons {
+  display: flex;
+  gap: 30px;
+  font-size: 0.9em;
+  margin-top: 30px;
+  align-items: center;
+}
+.hero .hero_content .buttons button {
+  background-color: #DB2A6B;
+  color: white;
+  padding: 10px 50px;
+  border-radius: 15px 15px 15px 1px;
+}
+.hero .hero_content .buttons div a {
+  text-align: center;
+  text-decoration: underline;
+  font-weight: 400;
+}
+.hero .hero_actions {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-top: 100px;
+}
+.hero .hero_actions div {
+  display: flex;
+  align-items: center;
+}
+.hero .hero_actions a img {
+  max-width: 55px;
+}
+.hero .hero_actions a {
+  font-weight: 400;
+  padding-left: 20px;
+}
+
+.hero_images {
+  min-width: 50%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+/*# sourceMappingURL=style.css.map */
