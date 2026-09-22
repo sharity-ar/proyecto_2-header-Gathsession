@@ -54,6 +54,9 @@ nav ul li a::after {
 nav ul li a:hover::after {
   transform: scaleX(1);
 }
+nav ul li a:hover {
+  color: white;
+}
 
 .hero {
   max-width: 50%;
