@@ -14,7 +14,7 @@ body {
 }
 
 .page {
-  max-width: 1300px;
+  max-width: 1400px;
   margin-left: auto;
   margin-right: auto;
   padding-left: 8px;
@@ -45,8 +45,27 @@ nav {
 
         li {
             a {
+                position: relative;
                 color: #ABABAB;
                 text-decoration: none;
+                padding-bottom: 4px;
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    left: 0;
+                    bottom: 0;
+                    width: 100%;
+                    height: 2px;
+                    background-color: #DB2A6B;
+                    transform: scaleX(0);
+                    transform-origin: center;
+                    transition: transform 0.3s ease;
+                }
+
+                &:hover::after {
+                    transform: scaleX(1);
+                }
             }
         }
     }
@@ -60,7 +79,7 @@ nav {
 
         h1 {
             font-family: "Merriweather", serif;
-            font-size: 4em;
+            font-size: 4.1em;
         }
 
         p {
@@ -79,12 +98,30 @@ nav {
                 color: white;
                 padding: 10px 50px;
                 border-radius: 15px 15px 15px 1px;
+                transition: all 0.3s ease;
+
+                &:hover {
+                    background-color: #ffc9e4;
+                    color: #DB2A6B;
+                    font-weight: 600;
+                }
             }
 
             div a {
                 text-align: center;
                 text-decoration: underline;
                 font-weight: 400;
+                display: inline-flex;
+                align-items: center;
+
+                &:hover span {
+                    transform: translateX(6px);
+                }
+            }
+
+            div span {
+                transition: transform 0.3s ease;
+                text-decoration: none !important;
             }
             
         }
@@ -95,6 +132,7 @@ nav {
         align-items: flex-start;
         justify-content: space-between;
         margin-top: 100px;
+        flex-wrap: wrap;
 
         div {
             display: flex;
@@ -112,9 +150,49 @@ nav {
     }
 }
 
-.hero_images {
-    min-width: 50%;
-    position: relative;
+.hero__hero {
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+
+.hero_images {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: repeat(6, 1fr);
+    width: min-content;
+
+    img {
+        max-width: 200px;
+    }
+
+    img:first-child {
+        grid-row: span 4 / span 4;
+    }
+
+    img:nth-child(2) {
+        grid-row: span 2 / span 2;
+        grid-column-start: 1;
+        grid-row-start: 5;
+    }
+
+    img:nth-child(3) {
+        grid-row: span 2 / span 2;
+        grid-column-start: 2;
+        grid-row-start: 1;
+    }  
+
+    img:nth-child(4) {
+        grid-row: span 4 / span 4;
+        grid-column-start: 2;
+        grid-row-start: 3;
+    }
+
+    img:nth-child(5) {
+        grid-row: span 4 / span 4;
+        grid-column-start: 3;
+        grid-row-start: 2;
+    }
 }

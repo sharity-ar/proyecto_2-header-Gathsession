@@ -5,7 +5,7 @@ body {
 }
 
 .page {
-  max-width: 1300px;
+  max-width: 1400px;
   margin-left: auto;
   margin-right: auto;
   padding-left: 8px;
@@ -34,8 +34,25 @@ nav ul {
   gap: 50px;
 }
 nav ul li a {
+  position: relative;
   color: #ABABAB;
   text-decoration: none;
+  padding-bottom: 4px;
+}
+nav ul li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #DB2A6B;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.3s ease;
+}
+nav ul li a:hover::after {
+  transform: scaleX(1);
 }
 
 .hero {
@@ -46,7 +63,7 @@ nav ul li a {
 }
 .hero .hero_content h1 {
   font-family: "Merriweather", serif;
-  font-size: 4em;
+  font-size: 4.1em;
 }
 .hero .hero_content p {
   color: #ABABAB;
@@ -63,17 +80,33 @@ nav ul li a {
   color: white;
   padding: 10px 50px;
   border-radius: 15px 15px 15px 1px;
+  transition: all 0.3s ease;
+}
+.hero .hero_content .buttons button:hover {
+  background-color: #ffc9e4;
+  color: #DB2A6B;
+  font-weight: 600;
 }
 .hero .hero_content .buttons div a {
   text-align: center;
   text-decoration: underline;
   font-weight: 400;
+  display: inline-flex;
+  align-items: center;
+}
+.hero .hero_content .buttons div a:hover span {
+  transform: translateX(6px);
+}
+.hero .hero_content .buttons div span {
+  transition: transform 0.3s ease;
+  text-decoration: none !important;
 }
 .hero .hero_actions {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
   margin-top: 100px;
+  flex-wrap: wrap;
 }
 .hero .hero_actions div {
   display: flex;
@@ -87,11 +120,44 @@ nav ul li a {
   padding-left: 20px;
 }
 
-.hero_images {
-  min-width: 50%;
-  position: relative;
+.hero__hero {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.hero_images {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: repeat(6, 1fr);
+  width: min-content;
+}
+.hero_images img {
+  max-width: 200px;
+}
+.hero_images img:first-child {
+  grid-row: span 4/span 4;
+}
+.hero_images img:nth-child(2) {
+  grid-row: span 2/span 2;
+  grid-column-start: 1;
+  grid-row-start: 5;
+}
+.hero_images img:nth-child(3) {
+  grid-row: span 2/span 2;
+  grid-column-start: 2;
+  grid-row-start: 1;
+}
+.hero_images img:nth-child(4) {
+  grid-row: span 4/span 4;
+  grid-column-start: 2;
+  grid-row-start: 3;
+}
+.hero_images img:nth-child(5) {
+  grid-row: span 4/span 4;
+  grid-column-start: 3;
+  grid-row-start: 2;
 }
 
 /*# sourceMappingURL=style.css.map */
